@@ -44,6 +44,7 @@ function sl_bhc_options_page()
   <form method="post" action="options.php">
   <?php settings_fields( 'sl_bhc_options_group' ); ?>
   <h3>Header Code</h3>
+  <p>Place any HTML here, including scripts and styles.</p>
   <table>
   <tr valign="top">
   <td><textarea cols="80" rows="6" type="text" id="sl_bhc_option_headercode" name="sl_bhc_option_headercode"><?php echo get_option('sl_bhc_option_headercode') ?></textarea></td>
@@ -56,17 +57,11 @@ function sl_bhc_options_page()
 }
 
 
-// // KSES to allow script tags
-// wp_kses(0, 'script');
-//
-// // Hooks into head
-// add_action('wp_head','better_header_code');
-//
-// // Displays the code in header
-// function better_header_code() {
-//   $sl_header_code = get_option('sl_bhc_option_headercode');
-//   echo  $sl_header_code;
-// }
+// Add Header code to the actual header
+function sl_bhc_inject_code() {
+  echo get_option('sl_bhc_option_headercode');
+}
+add_action('wp_head', 'sl_bhc_inject_code');
 
 
 
