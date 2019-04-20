@@ -34,7 +34,7 @@ function sl_bhc_headercode_sanitize ($content) {
 // On/Off switch
 function sl_bhc_headercode_enable_sanitize ($content) {
   // This shouldn't be anything other than OFF or ON.
-  if ($content != 'on' || $content != 'off') {
+  if ($content != 'on' || $content != 'off' || $content == true || $content == false) {
     $content = 'off';
   }
 
