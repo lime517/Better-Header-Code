@@ -4,7 +4,7 @@
  * Plugin Name: Better Header Code
  * Plugin URI:
  * Description: A ultra-lean Wordpress Plugin for implementing header code. Great for Google Analytics!
- * Version: 0.1
+ * Version: 1.0
  * Author: Safety Llama
  * Author URI: http://safetyllama.com
  */
