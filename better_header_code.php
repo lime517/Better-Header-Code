@@ -4,9 +4,9 @@
  * Plugin Name: Better Header Code
  * Plugin URI:
  * Description: A ultra-lean Wordpress Plugin for implementing header code. Great for Google Analytics!
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Safety Llama
- * Author URI: http://safetyllama.com
+ * Author URI: https://safetyllama.com
  */
 
 // Don't want anyone getting in here that shouldn't be.
@@ -28,17 +28,17 @@ add_action('admin_init', 'sl_bhc_register_settings');
 // Code
 function sl_bhc_headercode_sanitize ($content) {
   // We can't really sanitize this HTML. We INTENTIONALLY want the user to be able to put whatever they want in here.
-  $content;
+  return $content;
 }
 
 // On/Off switch
 function sl_bhc_headercode_enable_sanitize ($content) {
   // This shouldn't be anything other than OFF or ON.
-  if ($content != 'on' || $content != 'off' || $content == true || $content == false) {
-    $content = 'off';
+  if ($content == 'on' || $content == 'off' || $content == true || $content == false) {
+    return $content;
+  } else {
+    return 'off';
   }
-
-  return $content;
 }
 
 
@@ -108,7 +108,7 @@ function sl_bhc_options_page()
   </form>
 
   <div class="credits">
-    <p><i>Thanks for using Better Header Code by <a target="_blank" href="http://safetyllama.com">Safety Llama</a>!</i></p>
+    <p><i>Thanks for using Better Header Code by <a target="_blank" href="https://safetyllama.com">Safety Llama</a>!</i></p>
   </div>
   </div>
 <?php
@@ -123,8 +123,6 @@ function sl_bhc_inject_code()
     }
 }
 add_action('wp_head', 'sl_bhc_inject_code');
-
-
 
 
  ?>
