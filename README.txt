@@ -2,7 +2,7 @@
 Contributors: safetyllama
 Tags: header code, analytics code, insert header code, google analytics, inject code, inject header code, inject code, better header code
 Requires at least: 4.0
-Tested up to: 5.1
+Tested up to: 5.2
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -52,6 +52,9 @@ Not permanently! If you save bad code, you can easily remove it.
 1. The Better Header Code plugin menu in the 'Tools' menu.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed issue that would cause user input to not be saved.
 
 = 1.0 =
 * Initial release!
